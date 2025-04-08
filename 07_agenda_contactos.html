@@ -17,16 +17,37 @@
 
     //array donde guardamos los nombres
     let nombres=[];
+
+
+    //impedir que los nombres se repitan
+
     function guardar(){
         let n=document.getElementById("nombre").value;
-        nombres.push(n);
-        alert("Contacto guardado");
+        let repetido=false;
+        //recoremos el array y si encontramos una variable igual a n ponemos
+        //repetido al valor true
+        for( let nombre of nombres){
+            if( nombre ==n){
+            repetido=true;
+        }
+        }
+       
+
+        
+        if (repetido== false){
+            nombres.push(n);
+            alert("contacto guardado");
+
+         } else {
+                alert ("no añadido, el contacto ya existe");
+            }
     }
+        
     function mostrar (){
         let html="";
         for (let n of nombres){
             html= html+"<br>"+n+"</b><br>";
-        }
+        } 
         document.getElementById("listaNombres").innerHTML=html;
         }
     
