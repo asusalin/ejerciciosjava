@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="totalAprobados();"> Aprobados</button>
+    <button onclick="calcularMedia ();"> CalcularMedia</button>
+    <button onclick="notaAlta(); ">Nota mas alta</button>
+    <button onclick="notaBaja();"> Nota mas baja</button>
+    <button onclick="nuevaNota();"> Nueva nota </button>
+
+
+
+    <script>
+        //array con las notas
+        let notas= [7,5,2,4,9,6,1,3,4,8,7,6];
+        function totalAprobados() {
+            let totalAprobados= 0;
+            /*for(let i= 0; i<notas.length; i++)
+         }
+        
+           {
+            
+                if(notas[i]>=5){
+                    totalAprobados++;
+                }
+
+            }*/
+            for(let n of notas){
+                if( n>=5){
+                    totalAprobados++;
+                }
+            }
+            alert ("total aprobados:"+totalAprobados);
+        }
+            function calcularMedia(){
+                let media = 0
+                for ( let n of notas){
+                    media= media+n;
+                }
+                media= media/notas.length
+                alert("la media es: +media");
+
+            }
+
+            function notaAlta(){
+                let max= notas[0];
+                //recorremos todas las notas y si encontramos
+                //una mas que la almacenada en max, actualizamo
+                //la variable max con dicha nota
+                for (let n of notas){
+                    if (n>max){
+                        max=n;
+
+                    }
+                }
+                alert ("la nota mas alta es: "+max);
+
+                function notaBaja(){
+                let min= notas[0];
+                //recorremos todas las notas y si encontramos
+                //una mas que la almacenada en max, actualizamo
+                //la variable max con dicha nota
+                for (let n of notas){
+                    if (n<min){
+                        min=n;
+
+                    }
+                }
+                alert ("la nota mas baja es: "+min);
+            }
+        }
+        function nuevaNota(){
+            //se pide una nota que debe estar comprendida entre 0 y 0
+            //si no esta en rango, se debe olver a pedir
+
+            let nota;
+            do{
+                nota=   prompt ("introduce nueva nota:");
+            } while( nota < 0 || nota > 10 );
+
+            nota.push(parseInt(nota));
+            }
+      
+             
+            
+            
+            
+        
+
+    </script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .personal{
+            color: blue;
+            font-size: 25px;
+            font-style: italic;
+        }
+        input {
+            flex: 1;
+      padding: 12px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 8px; 
+
+        }
+    </style>
+</head>
+<body>
+
+    <button class="personal" onclick="nuevaNota();"> Nueva nota </button>
+    <input type="text" id="nota">
+    <br><br>
+
+    <button onclick="totalAprobados();"> Aprobados</button>
+    
+    <button onclick="calcularMedia ();"> CalcularMedia</button>
+    <div id="calcularMedia"></div>
+    <button onclick="notaAlta(); ">Nota mas alta</button>
+    <div id="notaAlta"></div>
+    <button onclick="notaBaja();"> Nota mas baja</button>
+<br><br>
+<div id="result"></div>
+
+    <script>
+        //array con las notas
+        let notas= [7,5,2,4,9,6,1,3,4,8,7,6];
+        function totalAprobados() {
+            let totalAprobados= 0;
+            /*for(let i= 0; i<notas.length; i++)
+         }
+        
+           {
+            
+                if(notas[i]>=5){
+                    totalAprobados++;
+                }
+
+            }*/
+            for(let n of notas){
+                if( n>=5){
+                    totalAprobados++;
+                }
+            }
+            alert ("total aprobados:"+totalAprobados);
+        }
+            function calcularMedia(){
+                let media = 0
+                for ( let n of notas){
+                    media= media+n;
+                }
+                media= media/notas.length
+                alert("la media es: +media");
+
+            }
+
+            function notaAlta(){
+                let max= notas[0];
+                //recorremos todas las notas y si encontramos
+                //una mas que la almacenada en max, actualizamo
+                //la variable max con dicha nota
+                for (let n of notas){
+                    if (n>max){
+                        max=n;
+
+                    }
+                }
+                alert ("la nota mas alta es: "+max);
+
+                function notaBaja(){
+                let min= notas[0];
+                //recorremos todas las notas y si encontramos
+                //una mas que la almacenada en max, actualizamo
+                //la variable max con dicha nota
+                for (let n of notas){
+                    if (n<min){
+                        min=n;
+
+                    }
+                }
+                alert ("la nota mas baja es: "+min);
+            }
+        }
+        function nuevaNota(){
+            /*
+            //se pide una nota que debe estar comprendida entre 0 y 0
+            //si no esta en rango, se debe olver a pedir
+
+            let nota;
+            do{
+                nota=   prompt ("introduce nueva nota:");
+            } while( nota < 0 || nota > 10 );
+             */
+            let nota= document.getElementById("nota").value;
+            //solo guardamos la nota si esta omprendida entre 0 y 10 
+            if(nota>=0&&<=10){
+
+                nota.push(parseInt(nota));
+            }
+            else{
+                alert ("nota no valida")
+            }
+            }
+      
+             
+            
+            
+            
+        
+
+    </script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick ="sumaDeNumeros();" >sumar </button> <button onclick=  "multiplicaNumeros();">multiplicar</button>
+    <button onclick="FactorialNumero()"> Factorial </button>
+
+    <script>
+        function sumaDeNumeros(){
+            //solicitu la instruccion de los numeros
+           let n1= prompt("Introduce el primer numero")
+           let n2= prompt("Introduce el segundo numero")
+           let= suma= parseInt (n1)+ parseInt(n2);
+           alert("La suma es"+suma);
+        }
+
+        function multiplicaNumeros(){
+             //solicitu la instruccion de los numeros
+           let n1= prompt("Introduce el primer numero")
+           let n2= prompt("Introduce el segundo numero")
+           let multi= n1*n2;
+           alert("La multiplicacion es"+multi);
+        }
+        function FactorialNumero(){
+            let n= prompt (" Introduce numero:");
+            let resultado =1;
+            for(let i=1; i<=n; i++){
+                resultado= resultado*i;
+            }
+            alert ("El factorial de "+n+" es: "+resultado);
+        }       
+    </script>
+</body>
+</html>
