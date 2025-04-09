@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    limite:<input type="number" id="limite">
+
+    <!--Esto es para mostrar un cuadro de texto o numero (solo muestra)-->
+    <div id="valor"><h1>0</h1></div>
+    <!--Esto es para mostrar un boton y el nombre adentro-->
+    
+    <button onclick ="contar();"> contar </button>
+
+    <script>
+        
+            //aqui defino mi variable y asigno el valor con el igual
+            //lo defino n porque es lo que hara el contador y se iniciara con 0
+            // para asignar se usa un igual =
+            //para asignar es doble igual ==
+            let contando=0;
+            
+
+           
+
+            //aqui estoy definiendo otra variable como ascendente para que 
+            //al hacerle funcionar llegue al tope de lo que escriba el usuario
+
+            let ascendente=true;
+
+            //aqui empiezo a usar la logica, llamo a la funcion que quiero que haga mi boton//
+            //que le puse el nombre de contar y dentro de contar es que usar condicionales o variables si hacen falta//
+            function contar(){
+
+                let limiteinferior=0;
+                let limiteSuperior= document.getElementById("limite").value;
+                //si es ascendente sumamos, sino restamos
+                if (ascendente==true){
+                    //contamos si no hmos llegado al limite
+                    if(contando<limiteSuperior){
+                        contando++;
+                    }else{//si se ha llegado al limite, va bajando y se cambia el sentido
+                        
+                        contando--;
+                        ascendente=false;
+
+                    }
+                }else {//descontamos si no hemos llegado al limite inferior
+                    if(contando>limiteinferior){
+                        contando--;
+                    }else{
+                        contando++;
+                    ascendente=true;
+                    }
+                    
+
+                }
+            
+
+
+
+            //aqui muestro que cuando llamo a la funcion contar se sumara uno a la variable
+            // el document. get es que de todo el documento voy a tomar el id, solo el id dentro del parentesis
+            // el punto innerhtml significa introducir codigo html dentro de la etiqueta
+            //h1 es una etiqueta de titulo de tamaño principal
+            //$ este signo es para poner dentro de el la variable que quiero que muestre 
+            document.getElementById('valor').innerHTML=`<h1>${contando}</h1>`;   
+
+            
+
+        } 
+
+
+        
+    </script>
+    
+</body>
+</html>
