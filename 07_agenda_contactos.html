@@ -26,6 +26,7 @@
         let repetido=false;
         //recoremos el array y si encontramos una variable igual a n ponemos
         //repetido al valor true
+
         for( let nombre of nombres){
             if( nombre ==n){
             repetido=true;
@@ -48,10 +49,21 @@
         
     function mostrar (){
         let html="";
+        /*
         for (let n of nombres){
-            html= html+"<br>"+n+"</b> img src='papelera.png' heigt ='20px' width= '20px'<br>";
-        } 
+            html= html+"<br>"+n+"</b> <a onclick='borrar();'> <img src='papelera.png' heigt ='20px' width= '20px'><br>";
+        } */
+        for (let i=0; i<nombres.length;i++){
+            html= html+"<b>"+nombres[i]+"</b> <a onclick='borrar("+i+")';'><img src='papelera.png' heigt ='20px' width= '20px'><br>";
+        }
+
+
         document.getElementById("listaNombres").innerHTML=html;
+        }
+        function borrar(pos){
+            //borra el nombre que esta en la posicion pos
+            nombres.splice(pos, 1);
+            mostrar();
         }
     
 </script>
