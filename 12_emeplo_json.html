@@ -31,7 +31,8 @@ function guardar(){
 }
 function vizualizar(){
    // console.log(jsonAlumno); //para visualizar el objeto en la consola
-   let frase=" te llamas "+jsonAlumno.nombre+" estas en el curso "+jsonAlumno.curso+" tu nota es "+jsonAlumno.nota;
+  // let frase=" te llamas "+jsonAlumno.nombre+" estas en el curso "+jsonAlumno.curso+" tu nota es "+jsonAlumno.nota;
+   let frase= `te llamas ${jsonAlumno.nombre} estas en el curso ${jsonAlumno.curso} tu nota es ${jsonAlumno.nota}`;
    document.getElementById("resultado").innerHTML=frase;
 
 }
