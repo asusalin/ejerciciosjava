@@ -6,6 +6,39 @@
     <title>Document</title>
 </head>
 <body>
+    Saldo <input type="saldo" id="saldo">
+    <button onclick= "guardar();" >GRABAR</button> <br>
+    <button onclick= "ingreso ();">Ingresar</button><br>
+    <button onclick="extraer();">Extraer</button>
+    cantidad <input type="cantidad"> <br>
+    <button onclick="saldoymovim">Saldo y Movimientos</button>
+
+    <script>
+        
+        let saldo=[];
+
+        function guardar(){
+            
+            let montos=document.getElementById("saldo").value;
+            alert ("monto guardado"+saldo);
+            document.getElementById("saldo").value="";
+            
+
+        }
+        function ingreso(){
+            let totalingreso=document.getElementById("cantidad").value;
+            
+
+        }
+
+
+
+
+    </script>
     
+    
+    
+    
+
 </body>
 </html>
