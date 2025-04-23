@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let numeros=[2,7,3,-4,8,1,];
+
+        //quiero que la consola me indique si hay algun numeri negativo en la lista
+        //como hariamos esto?
+
+        let indicador=numeros.some(function(n){
+            return n<0;
+        });
+        
+        if(indicador==true){
+            console.log("SI HAY NEGATIVOS");
+        }else {
+                console.log("NO HAY NEGATIVOS");
+            }
+
+            //PARA IMPRIMIR NUMEROS PARES
+           /* for (let n of numeros){
+                if (n%2==0){
+                    pares.push(n);
+                }
+            }*/
+            let pares=numeros.filter(function(n){
+                return n%2==0;
+            });
+            
+            console.log(pares);
+
+            //imprimir o mostrar cada uno de los elementos del array
+
+            //antes
+
+            /*for (let n of numeros){
+                console.log(n);
+            }
+*/
+            //ahora
+            numeros.forEach(function(n){
+                console.log(n);
+            });
+
+            //imprimir los negativos(sin usar for ni if ni variables adicionales)
+
+            numeros.filter((n)=> n<0)
+
+            .forEach(function(n){
+                console.log(n);
+            })
+
+            
+    
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
